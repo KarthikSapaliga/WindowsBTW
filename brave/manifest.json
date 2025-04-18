@@ -1,0 +1,21 @@
+{
+    "version": "1.0",
+    "manifest_version": 2,
+    "name": "One Dark",
+    "theme": {
+        "colors": {
+            "bookmark_text": [171, 178, 191],
+            "frame": [35, 39, 46],
+            "ntp_background": [54, 59, 68],
+            "ntp_text": [171, 178, 191],
+            "tab_background_text": [171, 178, 191],
+            "tab_background_text_inactive": [171, 178, 191],
+            "tab_background_text_incognito": [171, 178, 191],
+            "tab_background_text_incognito_inactive": [171, 178, 191],
+            "tab_text": [171, 178, 191],
+            "toolbar": [54, 59, 68],
+            "omnibox_text": [171, 178, 191],
+            "omnibox_background": [35, 39, 46]
+        }
+    }
+}
