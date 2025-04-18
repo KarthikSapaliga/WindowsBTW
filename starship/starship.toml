@@ -1,0 +1,114 @@
+format = """
+[](color_bg0)\
+$os\
+$username\
+[](bg:color_bg1 fg:color_bg0)\
+$directory\
+[](fg:color_bg1 bg:color_bg2)\
+$git_branch\
+$git_status\
+[](fg:color_bg2 bg:color_bg3)\
+$c\
+$golang\
+$java\
+$nodejs\
+$python\
+$rust\
+[](fg:color_bg3 bg:color_bg4)\
+$docker_context\
+[](fg:color_bg4 bg:color_bg5)\
+$time\
+[ ](fg:color_bg5)\
+$line_break$character"""
+
+palette = 'star'
+
+[palettes.star]
+fg_light = '#d7dae0'  # foreground light
+fg_dark = '#3B4252'   # foreground dark
+fg_red = '#e06c75'    # foreground red
+color_bg0 = '#3B4252' # os and username
+color_bg1 = '#434C5E' # directory
+color_bg2 = '#5a667d' # git
+color_bg3 = '#80abb0' # languages
+color_bg4 = '#0b9599' # docker context
+color_bg5 = '#33658A' # time
+
+[username]
+show_always = true
+style_user = "bg:color_bg0 fg:fg_light"
+style_root = "bg:color_bg0 fg:fg_light"
+format = '[$user ]($style)'
+
+[os]
+disabled = false
+style = "bg:color_bg0 fg:fg_light"
+
+[os.symbols]
+Arch = " "
+Debian = " "
+Fedora = " "
+Kali = " "
+Ubuntu = " "
+Windows = " "
+
+[directory]
+style = "bg:color_bg1 fg:fg_light"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[docker_context]
+symbol = " "
+style = "bg:color_bg4 fg:fg_dark"
+format = '[ $symbol $context ]($style) $path'
+
+[git_branch]
+symbol = ""
+style = "bg:color_bg2 fg:fg_light"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:color_bg2 fg:fg_light"
+format = '([$ahead_behind $all_status]($style))'
+conflicted = "= "
+ahead = "⇡${ahead_count} "
+behind = "⇣${behind_count} "
+diverged = "⇡${ahead_count}⇣${behind_count} "
+untracked = "?${count} "
+stashed = "\\$${count} "
+modified = "!${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
+
+[java]
+symbol = ""
+style = "bg:color_bg3 fg:fg_dark"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = "󰎙"
+style = "bg:color_bg3 fg:fg_dark"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color_bg3 fg:fg_dark"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:color_bg3 fg:fg_dark"
+format = '[ $symbol( $version) (\($virtualenv\))]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color_bg5 fg:fg_light"
+format = '[ $time ]($style)'
+
+[character]
+disabled = false
+success_symbol = '[ 󰘧](bold fg:fg_light)'
+error_symbol = '[ 󰘧](bold fg:fg_red)'
