@@ -1,6 +1,9 @@
 # Configurations
 
----
+[![GitHub Stars](https://img.shields.io/github/stars/KarthikSapaliga/config?style=social)](https://github.com/KarthikSapaliga/config/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/KarthikSapaliga/config?style=social)](https://github.com/KarthikSapaliga/config/network/members)
+[![GitHub License](https://img.shields.io/github/license/KarthikSapaliga/config)](https://github.com/KarthikSapaliga/config/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/KarthikSapaliga/config)](https://github.com/KarthikSapaliga/config/commits/main)
 
 ## Brave Browser
 
@@ -15,8 +18,6 @@
 
 -   [nightTab GitHub](https://github.com/zombieFox/nightTab)
 -   [nightTab Config](https://github.com/KarthikSapaliga/config/tree/main/nighttab)
-
----
 
 ## Terminal
 
