@@ -23,11 +23,6 @@
 
 ![Terminal Configuration Image](screenshots/terminal.png)
 
-### 🔹 Windows Terminal
-
--   [Windows Terminal Github](https://github.com/microsoft/terminal)
--   [Windows Terminal Configuration](https://github.com/KarthikSapaliga/config/tree/main/powershell)
-
 ### 🔹 Fastfetch
 
 -   [Fastfetch GitHub](https://github.com/fastfetch-cli/fastfetch)
