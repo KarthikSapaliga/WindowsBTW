@@ -6,6 +6,7 @@
 --    - Ctrl + Shift + W: Close the current pane with confirmation.
 --    - Ctrl + Shift + [1–9]: Switch directly to tab 1 through 9.
 --    - Ctrl + Shift + R: Rename the current tab via input prompt.
+--    - Ctrl + Shift + Q: Quit WezTerm even when multiple tabs are open.
 
 -- 2. Pane Splitting
 --    - Ctrl + Shift + D: Split the current pane horizontally.
@@ -26,11 +27,16 @@
 -- 5. Clipboard Operations
 --    - Ctrl + Shift + C: Copy selected text to the clipboard.
 --    - Ctrl + Shift + V: Paste content from the clipboard.
+--    - Right-click: Paste content from the clipboard.
 
 -- 6. Font Size Controls
 --    - Ctrl + Shift + =: Increase font size.
 --    - Ctrl + Shift + -: Decrease font size.
 --    - Ctrl + Shift + 0: Reset font size to default.
+
+-- 7. UI and View Toggles
+--    - Ctrl + Shift + Z: Toggle zoom for the current pane.
+--    - Alt + Enter: Toggle fullscreen mode.
 
 -- ============================================================
 
@@ -126,11 +132,12 @@ config.mouse_bindings = {
 -- Keybindings
 -- config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
-
-    -- Close current pane
-    { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentPane { confirm = true } },
     -- Spawn new tab
     { key = 't', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+    -- Close current pane
+    { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentPane { confirm = true } },
+    -- Quit the Application
+    { key = 'q', mods = 'CTRL|SHIFT', action = wezterm.action.QuitApplication },
 
     -- Pane split (horizontal and vertical)
     { key = 'd', mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
