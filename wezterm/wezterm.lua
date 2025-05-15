@@ -133,21 +133,21 @@ config.mouse_bindings = {
 -- config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
     -- Spawn new tab
-    { key = 't', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+    { key = 't',          mods = 'CTRL|SHIFT', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
     -- Close current pane
-    { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentPane { confirm = true } },
+    { key = 'w',          mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentPane { confirm = true } },
     -- Quit the Application
-    { key = 'q', mods = 'CTRL|SHIFT', action = wezterm.action.QuitApplication },
+    { key = 'q',          mods = 'CTRL|SHIFT', action = wezterm.action.QuitApplication },
 
     -- Pane split (horizontal and vertical)
-    { key = 'd', mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-    { key = 'e', mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { key = 'd',          mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+    { key = 'e',          mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
 
     -- Move focus (like Vim hjkl)
-    { key = 'h', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Left' },
-    { key = 'l', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Right' },
-    { key = 'k', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Up' },
-    { key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Down' },
+    { key = 'h',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Left' },
+    { key = 'l',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Right' },
+    { key = 'k',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Up' },
+    { key = 'j',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Down' },
 
     -- Resize with Arrow Keys
     { key = 'LeftArrow',  mods = 'CTRL|SHIFT', action = wezterm.action.AdjustPaneSize { 'Left', 5 } },
@@ -156,24 +156,24 @@ config.keys = {
     { key = 'DownArrow',  mods = 'CTRL|SHIFT', action = wezterm.action.AdjustPaneSize { 'Down', 5 } },
 
     -- Switch tab
-    { key = '1', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(0) },
-    { key = '2', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(1) },
-    { key = '3', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(2) },
-    { key = '4', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(3) },
-    { key = '5', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(4) },
-    { key = '6', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(5) },
-    { key = '7', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(6) },
-    { key = '8', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(7) },
-    { key = '9', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(8) },
+    { key = '1',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(0) },
+    { key = '2',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(1) },
+    { key = '3',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(2) },
+    { key = '4',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(3) },
+    { key = '5',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(4) },
+    { key = '6',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(5) },
+    { key = '7',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(6) },
+    { key = '8',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(7) },
+    { key = '9',          mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTab(8) },
 
     -- Copy/Paste
-    { key="c", mods="CTRL|SHIFT", action=wezterm.action.CopyTo("Clipboard")},
-    { key="v", mods="CTRL|SHIFT", action=wezterm.action.PasteFrom("Clipboard")},
+    { key = "c",          mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("Clipboard") },
+    { key = "v",          mods = "CTRL|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
 
     -- Font size adjustments
-    { key="=", mods="CTRL|SHIFT", action="IncreaseFontSize"},
-    { key="-", mods="CTRL|SHIFT", action="DecreaseFontSize"},
-    { key="0", mods="CTRL|SHIFT", action="ResetFontSize"},
+    { key = "=",          mods = "CTRL|SHIFT", action = "IncreaseFontSize" },
+    { key = "-",          mods = "CTRL|SHIFT", action = "DecreaseFontSize" },
+    { key = "0",          mods = "CTRL|SHIFT", action = "ResetFontSize" },
 
     -- Rename tab
     {
@@ -190,10 +190,13 @@ config.keys = {
     },
 
     -- Toggle pane zoom
-    { key = "z", mods = "CTRL|SHIFT", action = wezterm.action.TogglePaneZoomState },
+    { key = "z",     mods = "CTRL|SHIFT", action = wezterm.action.TogglePaneZoomState },
 
     -- Toggle fullscreen
-    { key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
+    { key = "Enter", mods = "ALT",        action = wezterm.action.ToggleFullScreen },
 }
+
+
+config.enable_kitty_graphics = true
 
 return config
