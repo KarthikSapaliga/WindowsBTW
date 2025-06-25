@@ -1,0 +1,178 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+bars:
+    primary-bar:
+        enabled: true
+        screens: ["*"]
+        class_name: "yasb-bar"
+        alignment:
+            position: "top"
+            center: false
+        animation:
+            enabled: true
+            duration: 1000
+        blur_effect:
+            enabled: false
+            acrylic: false
+            dark_mode: false
+            round_corners: false
+            round_corners_type: "normal"
+            border_color: "System"
+        window_flags:
+            always_on_top: false
+            windows_app_bar: true
+        dimensions:
+            width: "100%"
+            height: 32
+        padding:
+            top: 3
+            left: 3
+            bottom: 0
+            right: 3
+        widgets:
+            left: ["home", "glazewm_workspaces", "active_window"]
+            center: ["clock", "apps"]
+            right:
+                ["media", "microphone", "volume", "notifications", "power_menu"]
+widgets:
+    home:
+        type: "yasb.home.HomeWidget"
+        options:
+            label: "<span>\udb81\udf17</span>"
+            menu_list:
+                - { title: "User Home", path: "~" }
+                - { title: "Download", path: "~\\Downloads" }
+                - { title: "Documents", path: "~\\Documents" }
+                - { title: "Pictures", path: "~\\Pictures" }
+            system_menu: true
+            power_menu: false
+            blur: true
+
+    glazewm_workspaces:
+        type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+        options:
+            offline_label: "GlazeWM Offline"
+            hide_empty_workspaces: false
+            hide_if_offline: false
+
+    active_window:
+        type: "yasb.active_window.ActiveWindowWidget"
+        options:
+            label: "{win[title]}"
+            label_alt: ""
+            max_length: 32
+            rewrite:
+                - pattern: "^(.+?)-.*"
+                  replacement: "\\1"
+
+    clock:
+        type: "yasb.clock.ClockWidget"
+        options:
+            label: "{%b %d %a, %I:%M}"
+            label_alt: "{%B %d %A, %H:%M}"
+            timezones: []
+            calendar:
+                blur: True
+                round_corners: True
+                round_corners_type: "normal"
+                border_color: "System"
+                alignment: "center"
+                direction: "down"
+
+    apps:
+        type: "yasb.applications.ApplicationsWidget"
+        options:
+            container_padding:
+                top: 0
+                left: 6
+                bottom: 0
+                right: 6
+            label: "{data}"
+            app_list:
+                - { icon: "\uf422", launch: "search" }
+                - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
+                - {
+                      icon: "\udb80\ude39",
+                      launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+                  }
+
+    media:
+        type: "yasb.media.MediaWidget"
+        options:
+            label: "{title}"
+            label_alt: ""
+            max_field_size:
+                label: 24
+                label_alt: 24
+            show_thumbnail: true
+            controls_only: false
+            controls_left: true
+            hide_empty: true
+            thumbnail_alpha: 80
+            thumbnail_padding: 24
+            thumbnail_corner_radius: 0
+            thumbnail_edge_fade: true
+            icons:
+                prev_track: "\udb81\udcae"
+                next_track: "\udb81\udcad"
+                play: "\udb81\udc0a"
+                pause: "\udb80\udfe4"
+
+    volume:
+        type: "yasb.volume.VolumeWidget"
+        options:
+            label: "<span>{icon}</span> {level}"
+            label_alt: "{volume}"
+            tooltip: false
+            volume_icons:
+                - "\ueee8"
+                - "\uf026"
+                - "\uf027"
+                - "\uf027"
+                - "\uf028"
+            callbacks:
+                on_left: "toggle_mute"
+                on_right: "exec cmd.exe /c start ms-settings:sound"
+
+    microphone:
+        type: "yasb.microphone.MicrophoneWidget"
+        options:
+            label: "<span>{icon}</span> {level}"
+            label_alt: "<span>{icon}</span> {level}%"
+            icons:
+                normal: "\udb80\udf6c"
+                muted: "\udb80\udf6d"
+            callbacks:
+                on_left: "toggle_mute"
+                on_middle: "toggle_label"
+                on_right: "exec cmd.exe /c start ms-settings:sound"
+
+    notifications:
+        type: "yasb.notifications.NotificationsWidget"
+        options:
+            label: "<span>\uf476</span> {count}"
+            label_alt: "{count} notifications"
+            hide_empty: true
+            tooltip: false
+            callbacks:
+                on_left: "toggle_notification"
+                on_right: "do_nothing"
+                on_middle: "toggle_label"
+
+    power_menu:
+        type: "yasb.power_menu.PowerMenuWidget"
+        options:
+            label: "\uf011"
+            uptime: True
+            blur: False
+            blur_background: True
+            animation_duration: 200
+            button_row: 5
+            buttons:
+                shutdown: ["\uf011", "Shut Down"]
+                restart: ["\uead2", "Restart"]
+                signout: ["\udb80\udf43", "Sign out"]
+                hibernate: ["\uf28e", "Hibernate"]
+                sleep: ["\u23fe", "Sleep"]
+                cancel: ["", "Cancel"]
