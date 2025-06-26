@@ -17,8 +17,8 @@
     --surface1: #45475a;
     --surface0: #282936;
 
-    --base: #1e1e2e;
-    --crust: rgba(32, 32, 43, 0.92);
+    --base: #b6c600;
+    --crust: #282c34;
 }
 
 /* Global styles for ToolTip */
@@ -35,6 +35,7 @@ QToolTip {
     color: var(--text);
     font-weight: 600;
     font-family: "JetBrainsMono NFP";
+
     margin: 0;
     padding: 0;
 }
@@ -43,7 +44,7 @@ QToolTip {
     margin: 0;
     background-color: var(--crust);
     border-radius: 8px;
-    border: 1px solid #313244;
+    border: 1px solid var(--surface1);
 }
 .widget {
     padding: 0 12px;
@@ -140,7 +141,7 @@ QToolTip {
 
 .calendar .calendar-table::item:selected {
     background: var(--lavender);
-    color: var(--base);
+    color: var(--crust);
     border-radius: 5px;
 }
 
@@ -282,11 +283,7 @@ QToolTip {
     margin: 0px;
 }
 .power-menu-popup .button.hover {
-    background-color: var(--base);
-    border-left: 4px solid var(--base);
-    border-right: 4px solid var(--base);
-    border-top: 4px solid var(--base);
-    border-bottom: 4px solid var(--base);
+    background-color: var(--surface1);
 }
 
 .power-menu-popup .button .label {
