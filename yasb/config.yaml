@@ -26,15 +26,24 @@ bars:
             width: "100%"
             height: 32
         padding:
-            top: 3
-            left: 3
+            top: 0
+            left: 0
             bottom: 0
-            right: 3
+            right: 0
         widgets:
             left: ["home", "glazewm_workspaces", "active_window"]
             center: ["clock", "apps"]
             right:
-                ["media", "microphone", "volume", "notifications", "power_menu"]
+                [
+                    "media",
+                    "notes",
+                    "microphone",
+                    "volume",
+                    "wifi",
+                    "battery",
+                    "notifications",
+                    "power_menu",
+                ]
 widgets:
     home:
         type: "yasb.home.HomeWidget"
@@ -69,8 +78,8 @@ widgets:
     clock:
         type: "yasb.clock.ClockWidget"
         options:
-            label: "{%b %d %a, %I:%M}"
-            label_alt: "{%B %d %A, %H:%M}"
+            label: "{%a %d %b, %I:%M}"
+            label_alt: "{%A %d %B, %H:%M}"
             timezones: []
             calendar:
                 blur: True
@@ -91,11 +100,10 @@ widgets:
             label: "{data}"
             app_list:
                 - { icon: "\uf422", launch: "search" }
-                - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-                - {
-                      icon: "\udb80\ude39",
-                      launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
-                  }
+                - { icon: "\ueb03", launch: "taskmgr" }
+                - { icon: "\uf489", launch: "wt" }
+                - { icon: "\udb82\ude1e", launch: "code" }
+                - { icon: "\uf484", launch: "start brave" }
 
     media:
         type: "yasb.media.MediaWidget"
@@ -105,19 +113,53 @@ widgets:
             max_field_size:
                 label: 24
                 label_alt: 24
-            show_thumbnail: true
-            controls_only: false
+            controls_only: true
             controls_left: true
             hide_empty: true
-            thumbnail_alpha: 80
+            show_thumbnail: true
+            thumbnail_alpha: 90
             thumbnail_padding: 24
             thumbnail_corner_radius: 0
-            thumbnail_edge_fade: true
+            thumbnail_edge_fade: false
             icons:
                 prev_track: "\udb81\udcae"
                 next_track: "\udb81\udcad"
-                play: "\udb81\udc0a"
-                pause: "\udb80\udfe4"
+                play: "\uf04b"
+                pause: "\uf04c"
+
+    notes:
+        type: "yasb.notes.NotesWidget"
+        options:
+            label: "<span>\udb82\udd0c</span> {count}"
+            label_alt: "{count} notes"
+            container_padding:
+                top: 0
+                left: 0
+                bottom: 0
+                right: 0
+            menu:
+                blur: true
+                round_corners: true
+                round_corners_type: "normal"
+                border_color: "System"
+                alignment: "right"
+                direction: "down"
+                offset_top: 6
+                offset_left: 220
+                max_title_size: 150
+                show_date_time: true
+            icons:
+                note: "\udb82\udd0c"
+                delete: "\ue20d"
+            callbacks:
+                on_left: "toggle_menu"
+                on_middle: "do_nothing"
+                on_right: "toggle_label"
+            label_shadow:
+                enabled: true
+                color: "black"
+                radius: 6
+                offset: [1, 1]
 
     volume:
         type: "yasb.volume.VolumeWidget"
@@ -147,6 +189,47 @@ widgets:
                 on_left: "toggle_mute"
                 on_middle: "toggle_label"
                 on_right: "exec cmd.exe /c start ms-settings:sound"
+
+    wifi:
+        type: "yasb.wifi.WifiWidget"
+        options:
+            label: "<span>{wifi_icon}</span>"
+            label_alt: "<span>{wifi_icon}</span>{wifi_name}"
+            ethernet_label: "<span>{wifi_icon}</span>"
+            ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
+            ethernet_icon: "\ueba9"
+            update_interval: 5000
+            wifi_icons: [
+                    "\udb82\udd2e", # 0% strength icon
+                    "\udb82\udd1f", # 1-20% strength
+                    "\udb82\udd22", # 21-40% strength
+                    "\udb82\udd25", # 41-80% strength
+                    "\udb82\udd28", # 81-100% strength
+                ]
+            label_shadow:
+                enabled: true
+                color: "black"
+                radius: 6
+                offset: [1, 1]
+
+    battery:
+        type: "yasb.battery.BatteryWidget"
+        options:
+            label: "<span>{icon}</span>{percent}%"
+            label_alt: "time: {time_remaining}"
+            charging_options:
+                icon_format: "{charging_icon}"
+            status_thresholds:
+                critical: 10
+                low: 25
+                medium: 75
+                high: 95
+                full: 100
+            label_shadow:
+                enabled: true
+                color: "black"
+                radius: 6
+                offset: [1, 1]
 
     notifications:
         type: "yasb.notifications.NotificationsWidget"

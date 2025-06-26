@@ -39,13 +39,14 @@ QToolTip {
     margin: 0;
     padding: 0;
 }
+
 .yasb-bar {
     padding: 0;
     margin: 0;
     background-color: var(--crust);
-    border-radius: 8px;
-    border: 1px solid var(--surface1);
+    border-bottom: 1px solid var(--surface1);
 }
+
 .widget {
     padding: 0 12px;
     margin: 0;
@@ -124,6 +125,16 @@ QToolTip {
 
 /* ======================================== Clock Widget ======================================== */
 
+.clock-widget {
+    padding: 0 6px;
+}
+
+.clock-widget .widget-container .label {
+    font-family: "JetBrainsMono NFP";
+    color: var(--text);
+    font-weight: 500;
+}
+
 .calendar {
     background-color: var(--crust);
 }
@@ -195,7 +206,7 @@ QToolTip {
 /* ======================================== Media Widget ======================================== */
 
 .media-widget {
-    padding: 0;
+    padding: 0 6px;
     margin: 0;
     border-radius: 0;
 }
@@ -217,24 +228,114 @@ QToolTip {
     color: #babfd3;
 }
 .media-widget .btn.play {
-    font-size: 24px;
-    color: #989caa;
+    font-size: 18px;
+    color: var(--text);
 }
 .media-widget .btn.disabled:hover,
 .media-widget .btn.disabled {
-    color: #4e525c;
-    background-color: rgba(0, 0, 0, 0);
+    color: var(--subtext0);
     font-size: 20px;
+}
+
+/* ======================================== Notes Widget ======================================== */
+
+.notes-widget {
+    padding: 0 6px;
+}
+.notes-widget .label {
+    font-size: 13px;
+}
+.notes-widget .icon {
+    font-size: 16px;
+    margin: 0;
+    color: #dbfeb4;
+}
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background: var(--crust);
+}
+.notes-menu .note-item {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.notes-menu .note-item:hover {
+    background: var(--surface1);
+}
+.notes-menu .note-item .icon {
+    font-size: 16px;
+    padding: 0 4px;
+}
+.notes-menu .delete-button {
+    color: var(--red);
+    background: transparent;
+    border: none;
+    font-size: 8px;
+    padding: 7px 8px;
+    border-radius: 3px;
+}
+.notes-menu .delete-button:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.notes-menu .note-item .title {
+    font-size: 13px;
+    font-family: "Segoe UI";
+}
+.notes-menu .note-item .date {
+    font-size: 12px;
+    font-family: "Segoe UI";
+    color: rgba(255, 255, 255, 0.4);
+}
+.notes-menu .empty-list {
+    font-family: "Segoe UI";
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0 20px 0;
+}
+.notes-menu .add-button,
+.notes-menu .cancel-button {
+    padding: 8px;
+    background-color: var(--surface1);
+    border: none;
+    border-radius: 4px;
+    color: var(--text);
+    font-family: "Segoe UI";
+}
+.notes-menu .cancel-button {
+    margin-left: 4px;
+}
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+    background-color: var(--surface2);
+}
+.notes-menu .scroll-area {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+.notes-menu .note-input {
+    background-color: var(--surface0);
+    border: var(--surface1);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    max-height: 30px;
+    padding: 4px;
+    border-radius: 6px;
+}
+.note-input:focus {
+    border: 1px solid var(--surface1);
 }
 
 /* ======================================== Microphone Widget ======================================== */
 
 .microphone-widget {
-    padding: 0 6px 0 6px;
+    padding: 0 6px;
 }
 .microphone-widget .icon {
     font-size: 18px;
     color: var(--mauve);
+    margin: 0px 2px 0 0;
 }
 
 /* ======================================== Volume Widget ======================================== */
@@ -243,15 +344,50 @@ QToolTip {
     padding: 0 6px;
 }
 .volume-widget .icon {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--blue);
     margin: 0px 2px 0 0;
+}
+
+/* ======================================== Wifi Widget ======================================== */
+
+.wifi-widget {
+    padding: 0 6px;
+}
+
+.wifi-widget .widget-container .icon {
+    font-size: 15px;
+    color: var(--lavender);
+    margin: 0px 2px 0 0;
+}
+
+/* ======================================== Battery Widget ======================================== */
+
+.battery-widget {
+    padding: 0 6px;
+}
+
+.battery-widget .widget-container .icon {
+    margin: 0px 2px 0 0;
+    color: var(--yellow);
+}
+.battery-widget .widget-container .icon.status-low {
+    color: #ff6a6a;
+    background: transparent;
+}
+.battery-widget .widget-container .icon.status-medium {
+    color: #ffff88;
+    background: transparent;
+}
+.battery-widget .widget-container .icon.status-charging {
+    color: #850bff;
+    background: transparent;
 }
 
 /* ======================================== Notification Widget ======================================== */
 
 .notification-widget {
-    padding: 0 0px 0 4px;
+    padding: 0 2px 0 0;
 }
 .notification-widget .icon {
     font-size: 14px;
@@ -261,6 +397,9 @@ QToolTip {
 }
 
 /* ======================================== PowerMenu Widget ======================================== */
+.power-menu-widget {
+    padding: 0 10px 0 4px;
+}
 
 .power-menu-widget .label {
     color: #f38ba8;
