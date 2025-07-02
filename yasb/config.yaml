@@ -13,14 +13,14 @@ bars:
             enabled: true
             duration: 1000
         blur_effect:
-            enabled: false
+            enabled: true
             acrylic: false
             dark_mode: false
             round_corners: false
             round_corners_type: "normal"
             border_color: "System"
         window_flags:
-            always_on_top: false
+            always_on_top: true
             windows_app_bar: true
         dimensions:
             width: "100%"
@@ -50,10 +50,12 @@ widgets:
         options:
             label: "<span>\udb81\udf17</span>"
             menu_list:
-                - { title: "User Home", path: "~" }
-                - { title: "Download", path: "~\\Downloads" }
+                - { title: "Home", path: "~" }
                 - { title: "Documents", path: "~\\Documents" }
+                - { title: "Download", path: "~\\Downloads" }
                 - { title: "Pictures", path: "~\\Pictures" }
+                - { title: "Videos", path: "~\\Videos" }
+                - { title: "GitHub", path: "~\\GitHub" }
             system_menu: true
             power_menu: false
             blur: true
@@ -216,7 +218,7 @@ widgets:
         type: "yasb.battery.BatteryWidget"
         options:
             label: "<span>{icon}</span>{percent}%"
-            label_alt: "time: {time_remaining}"
+            label_alt: "<span>{icon}</span>time: {time_remaining}"
             charging_options:
                 icon_format: "{charging_icon}"
             status_thresholds:
