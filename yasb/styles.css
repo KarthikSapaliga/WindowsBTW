@@ -18,7 +18,7 @@
     --surface0: #282936;
 
     --base: #b6c600;
-    --crust: #282c34;
+    --crust: rgba(40, 44, 52, 0.5);
 }
 
 /* Global styles for ToolTip */
@@ -43,7 +43,7 @@ QToolTip {
 .yasb-bar {
     padding: 0;
     margin: 0;
-    background-color: var(--crust);
+    background-color: rgba(40, 44, 52, 0.5);
     border-bottom: 1px solid var(--surface1);
 }
 
@@ -64,6 +64,7 @@ QToolTip {
 }
 .home-widget .icon {
     color: var(--lavender);
+    font-size: 17px;
 }
 .home-widget .icon:hover {
     color: var(--text);
