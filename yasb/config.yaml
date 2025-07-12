@@ -36,7 +36,7 @@ bars:
             right:
                 [
                     "media",
-                    "notes",
+                    "todo",
                     "microphone",
                     "volume",
                     "wifi",
@@ -162,6 +162,46 @@ widgets:
                 color: "black"
                 radius: 6
                 offset: [1, 1]
+
+    todo:
+        type: "yasb.todo.TodoWidget"
+        options:
+            label: "<span>\uf0ae</span> {completed}/{count}"
+            label_alt: "\uf0ae Tasks: {count}"
+            menu:
+                blur: true
+                round_corners: true
+                round_corners_type: "normal"
+                border_color: "system"
+                alignment: "center"
+                direction: "down"
+                offset_top: 6
+                offset_left: 0
+            icons:
+                add: "\uf501 New Task"
+                edit: "\uf01f  Edit"
+                delete: "\uf48e  Delete"
+                date: "\ue641"
+                category: "\uf412"
+                checked: "\udb80\udd34"
+                unchecked: "\udb80\udd30"
+                sort: "\ueab4"
+                no_tasks: "\uf4a0"
+            categories:
+                default:
+                    label: "General"
+                soon:
+                    label: "Complete soon"
+                today:
+                    label: "End of day"
+                urgent:
+                    label: "Urgent"
+                important:
+                    label: "Important"
+            callbacks:
+                on_left: "toggle_menu"
+                on_middle: "do_nothing"
+                on_right: "toggle_label"
 
     volume:
         type: "yasb.volume.VolumeWidget"
