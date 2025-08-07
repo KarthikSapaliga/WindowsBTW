@@ -32,7 +32,7 @@ bars:
             right: 0
         widgets:
             left: ["home", "glazewm_workspaces", "active_window"]
-            center: ["clock", "apps"]
+            center: ["clock"]
             right:
                 [
                     "media",
@@ -166,7 +166,7 @@ widgets:
     todo:
         type: "yasb.todo.TodoWidget"
         options:
-            label: "<span>\uf0ae</span> {completed}/{count}"
+            label: "<span>\uf0ae</span> {count}/{total}"
             label_alt: "\uf0ae Tasks: {count}"
             menu:
                 blur: true
