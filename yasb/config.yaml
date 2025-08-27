@@ -16,7 +16,7 @@ bars:
             enabled: true
             acrylic: false
             dark_mode: false
-            round_corners: false
+            round_corners: true
             round_corners_type: "normal"
             border_color: "System"
         window_flags:
@@ -26,10 +26,10 @@ bars:
             width: "100%"
             height: 32
         padding:
-            top: 0
-            left: 0
+            top: 2
+            left: 4
             bottom: 0
-            right: 0
+            right: 4
         widgets:
             left: ["home", "glazewm_workspaces", "active_window"]
             center: ["clock"]
@@ -90,6 +90,9 @@ widgets:
                 border_color: "System"
                 alignment: "center"
                 direction: "down"
+                country_code: "IN"
+                show_holidays: True
+                holiday_color: "#FF6464"
 
     apps:
         type: "yasb.applications.ApplicationsWidget"
@@ -158,7 +161,7 @@ widgets:
                 on_middle: "do_nothing"
                 on_right: "toggle_label"
             label_shadow:
-                enabled: true
+                enabled: false
                 color: "black"
                 radius: 6
                 offset: [1, 1]
@@ -235,8 +238,8 @@ widgets:
     wifi:
         type: "yasb.wifi.WifiWidget"
         options:
-            label: "<span>{wifi_icon}</span>"
-            label_alt: "<span>{wifi_icon}</span>{wifi_name}"
+            label: "<span>{wifi_icon}</span>{wifi_name}"
+            label_alt: "<span>{wifi_icon}</span>"
             ethernet_label: "<span>{wifi_icon}</span>"
             ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
             ethernet_icon: "\ueba9"
@@ -249,7 +252,7 @@ widgets:
                     "\udb82\udd28", # 81-100% strength
                 ]
             label_shadow:
-                enabled: true
+                enabled: false
                 color: "black"
                 radius: 6
                 offset: [1, 1]
@@ -268,7 +271,7 @@ widgets:
                 high: 95
                 full: 100
             label_shadow:
-                enabled: true
+                enabled: false
                 color: "black"
                 radius: 6
                 offset: [1, 1]
@@ -293,11 +296,11 @@ widgets:
             blur: False
             blur_background: True
             animation_duration: 200
-            button_row: 5
+            button_row: 4
             buttons:
                 shutdown: ["\uf011", "Shut Down"]
                 restart: ["\uead2", "Restart"]
                 signout: ["\udb80\udf43", "Sign out"]
                 hibernate: ["\uf28e", "Hibernate"]
-                sleep: ["\u23fe", "Sleep"]
+                # sleep: ["\u23fe", "Sleep"]
                 cancel: ["", "Cancel"]
