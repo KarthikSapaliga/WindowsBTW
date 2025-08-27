@@ -1,0 +1,1 @@
+item(title='Open in Terminal' where=sel.count or wnd.is_taskbar or wnd.is_edit tip='Open current folder in Windows Terminal' image='@package.path("WindowsTerminal")\WindowsTerminal.exe' cmd='wt.exe' arg='-d "@sel.path\."')
