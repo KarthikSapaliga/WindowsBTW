@@ -1,0 +1,130 @@
+{
+    // "logo": {
+    //     "type": "iterm",
+    //     "source": "C:\\Users\\Karthik\\.config\\fastfetch\\win11.png",
+    //     "width": 40,
+    //     "padding": {
+    //         "top": 3,
+    //         "left": 2,
+    //         "right": 4
+    //     }
+    // },
+    "logo": {
+        "source": "C:\\Users\\Karthik\\.config\\fastfetch\\win-logo.txt",
+        "type": "file",
+        "padding": {
+            "top": 3,
+            "left": 2,
+            "right": 4
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌───────────────────────Hardware───────────────────────┐"
+        },
+        {
+            "type": "host",
+            "key": " PC ",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├ ",
+            "showPeCoreCount": true,
+            "keyColor": "green",
+            "format": "{name} @ {freq-base}"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰨇 ",
+            "keyColor": "green",
+            "format": "{name} [{type}]"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├ ",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "└ └ ",
+            "keyColor": "green",
+            "format": "[{mountpoint}] {size-used} / {size-total} ({size-percentage})"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└──────────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌───────────────────────Software───────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": " OS ",
+            "keyColor": "yellow",
+            "format": "{name} {version} {variant}"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├ ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├ ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "└ └ ",
+            "keyColor": "yellow",
+            "format": "{pretty-name} {version}"
+        },
+        {
+            "type": "de",
+            "key": " DE ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├  ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├ ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wmtheme",
+            "key": "└ └󰉼 ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└──────────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌─────────────────────Uptime / Age─────────────────────┐"
+        },
+        {
+            "type": "command",
+            "key": "  OS Age ",
+            "keyColor": "magenta",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "  Uptime ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└──────────────────────────────────────────────────────┘"
+        }
+    ]
+}
