@@ -53,8 +53,8 @@ window_effects:
         # Highlight the window with a colored border.
         # ** Exclusive to Windows 11 due to API limitations.
         border:
-            enabled: false
-            color: "#4d4d57"
+            enabled: true
+            color: "#626880"
 
         # Remove the title bar from the window's frame. Note that this can
         # cause rendering issues for some applications.
@@ -78,8 +78,8 @@ window_effects:
     # Visual effects to apply to non-focused windows.
     other_windows:
         border:
-            enabled: false
-            color: "#4d4d57"
+            enabled: true
+            color: "#414559"
         hide_title_bar:
             enabled: false
         corner_style:
