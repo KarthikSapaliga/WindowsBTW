@@ -67,7 +67,7 @@ QToolTip {
 
 /* ======================================== Home Widget ======================================== */
 .home-widget {
-    padding: 0 4px 0 12px;
+    padding: 1px 6px 0 12px;
 }
 .home-widget .icon {
     color: var(--lavender);
@@ -97,7 +97,7 @@ QToolTip {
 
 .glazewm-workspaces {
     margin: 0;
-    padding: 0 5px;
+    padding: 0 4px;
 }
 
 .glazewm-workspaces .ws-btn {
@@ -106,7 +106,7 @@ QToolTip {
     color: var(--lavender);
     border: none;
     border-radius: 2px;
-    padding: 0 5px;
+    padding: 1px 5px 0 5px;
     margin: 0 2px;
 }
 
@@ -131,7 +131,7 @@ QToolTip {
 /* ======================================== Clock Widget ======================================== */
 
 .clock-widget {
-    padding: 0 6px;
+    padding: 1px 6px 0 6px;
 }
 
 .clock-widget .widget-container .label {
