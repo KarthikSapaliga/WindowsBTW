@@ -48,7 +48,7 @@ widgets:
     home:
         type: "yasb.home.HomeWidget"
         options:
-            label: "<span>\udb81\udf17</span>"
+            label: "<span>\udb83\ude95</span>"
             menu_list:
                 - { title: "Home", path: "~" }
                 - { title: "Documents", path: "~\\Documents" }
@@ -80,7 +80,7 @@ widgets:
     clock:
         type: "yasb.clock.ClockWidget"
         options:
-            label: "{%a %d %b, %I:%M}"
+            label: "{%I:%M, %a %d %b}"
             label_alt: "{%A %d %B, %H:%M}"
             timezones: []
             calendar:
