@@ -16,22 +16,27 @@ bars:
             enabled: true
             acrylic: false
             dark_mode: false
-            round_corners: true
+            round_corners: false
             round_corners_type: "normal"
             border_color: "System"
         window_flags:
-            always_on_top: true
+            always_on_top: false
             windows_app_bar: true
         dimensions:
             width: "100%"
-            height: 32
+            height: 30
         padding:
-            top: 2
-            left: 4
+            top: 0
+            left: 0
             bottom: 0
-            right: 4
+            right: 0
         widgets:
-            left: ["home", "glazewm_workspaces", "active_window"]
+            left: 
+                [
+                    "home", 
+                    "glazewm_workspaces", 
+                    "active_window"
+                ]
             center: ["clock"]
             right:
                 [
@@ -80,7 +85,7 @@ widgets:
     clock:
         type: "yasb.clock.ClockWidget"
         options:
-            label: "{%I:%M, %a %d %b}"
+            label: "{%a %d %b, %I:%M %p}"
             label_alt: "{%A %d %B, %H:%M}"
             timezones: []
             calendar:
@@ -94,27 +99,11 @@ widgets:
                 show_holidays: True
                 holiday_color: "#FF6464"
 
-    apps:
-        type: "yasb.applications.ApplicationsWidget"
-        options:
-            container_padding:
-                top: 0
-                left: 6
-                bottom: 0
-                right: 6
-            label: "{data}"
-            app_list:
-                - { icon: "\uf422", launch: "search" }
-                - { icon: "\ueb03", launch: "taskmgr" }
-                - { icon: "\uf489", launch: "wt" }
-                - { icon: "\udb82\ude1e", launch: "code" }
-                - { icon: "\uf484", launch: "start brave" }
-
     media:
         type: "yasb.media.MediaWidget"
         options:
             label: "{title}"
-            label_alt: ""
+            label_alt: "{title}"
             max_field_size:
                 label: 24
                 label_alt: 24
@@ -131,40 +120,6 @@ widgets:
                 next_track: "\udb81\udcad"
                 play: "\uf04b"
                 pause: "\uf04c"
-
-    notes:
-        type: "yasb.notes.NotesWidget"
-        options:
-            label: "<span>\udb82\udd0c</span> {count}"
-            label_alt: "{count} notes"
-            container_padding:
-                top: 0
-                left: 0
-                bottom: 0
-                right: 0
-            menu:
-                blur: true
-                round_corners: true
-                round_corners_type: "normal"
-                border_color: "System"
-                alignment: "right"
-                direction: "down"
-                offset_top: 6
-                offset_left: 220
-                max_title_size: 150
-                show_date_time: true
-            icons:
-                note: "\udb82\udd0c"
-                delete: "\ue20d"
-            callbacks:
-                on_left: "toggle_menu"
-                on_middle: "do_nothing"
-                on_right: "toggle_label"
-            label_shadow:
-                enabled: false
-                color: "black"
-                radius: 6
-                offset: [1, 1]
 
     todo:
         type: "yasb.todo.TodoWidget"
@@ -238,8 +193,8 @@ widgets:
     wifi:
         type: "yasb.wifi.WifiWidget"
         options:
-            label: "<span>{wifi_icon}</span>{wifi_name}"
-            label_alt: "<span>{wifi_icon}</span>"
+            label: "<span>{wifi_icon}</span>"
+            label_alt: "<span>{wifi_icon}</span>{wifi_name}"
             ethernet_label: "<span>{wifi_icon}</span>"
             ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
             ethernet_icon: "\ueba9"
@@ -256,6 +211,32 @@ widgets:
                 color: "black"
                 radius: 6
                 offset: [1, 1]
+            # get_exact_wifi_strength: false # Will require location access permission if true.
+            # callbacks:
+            #     on_left: "toggle_menu"
+            #     on_middle: "exec cmd.exe /c start ms-settings:network"
+            #     on_right: "toggle_label"
+            # menu_config:
+            #     blur: true
+            #     round_corners: true
+            #     round_corners_type: "normal"
+            #     border_color: "System"
+            #     alignment: "right"
+            #     direction: "down"
+            #     offset_top: 6
+            #     offset_left: 0
+            #     wifi_icons_secured: [
+            #         "\ue670",
+            #         "\ue671",
+            #         "\ue672",
+            #         "\ue673",
+            #     ]
+            #     wifi_icons_unsecured: [
+            #         "\uec3c",
+            #         "\uec3d",
+            #         "\uec3e",
+            #         "\uec3f",
+            #     ]
 
     battery:
         type: "yasb.battery.BatteryWidget"
