@@ -1,0 +1,44 @@
+:root {
+  --zen-main-browser-background: #32363E !important;
+  --zen-main-browser-background-toolbar: #32363E !important;
+  --toolbarbutton-icon-fill: #ABB2BF !important;
+  --zen-toolbar-element-bg: #282C34 !important;
+}
+
+*{
+  --toolbox-textcolor: #ABB2BF !important;
+}
+
+/* min, max, close button */
+.titlebar-button {
+  &::before {
+    color: #ABB2BF !important;;
+  }
+}
+
+.urlbar-background {
+  background: #282C34 !important;
+}
+
+#titlebar{
+  margin: 4px;
+  margin-top: 6px;
+}
+
+:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
+  & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+    :root:not([zen-no-padding="true"]) &:not(.zen-glance-overlay) {
+      box-shadow: 0 0 0 !important;;
+    }
+  }
+}
+
+:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
+  & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+    & browser[type="content"] {
+      &[transparent="true"] {
+        background: #282C34 !important;;
+      }
+    }
+  }
+}
