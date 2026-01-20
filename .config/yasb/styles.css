@@ -1,35 +1,34 @@
 :root {
-  --rosewater: #f2d5cf;
-  --flamingo: #eebebe;
-  --pink: #f4b8e4;
-  --mauve: #ca9ee6;
-  --red: #e78284;
-  --maroon: #ea999c;
-  --peach: #ef9f76;
-  --yellow: #e5c890;
-  --green: #a6d189;
-  --teal: #81c8be;
-  --sky: #99d1db;
-  --sapphire: #85c1dc;
-  --blue: #8caaee;
-  --lavender: #babbf1;
+    --rosewater: #f2d5cf;
+    --flamingo: #eebebe;
+    --pink: #f4b8e4;
+    --mauve: #ca9ee6;
+    --red: #e78284;
+    --maroon: #ea999c;
+    --peach: #ef9f76;
+    --yellow: #e5c890;
+    --green: #a6d189;
+    --teal: #81c8be;
+    --sky: #99d1db;
+    --sapphire: #85c1dc;
+    --blue: #8caaee;
+    --lavender: #babbf1;
 
-  --text: #c6d0f5;
-  --subtext1: #b5bfe2;
-  --subtext0: #a5adce;
+    --text: #c6d0f5;
+    --subtext1: #b5bfe2;
+    --subtext0: #a5adce;
 
-  --overlay2: #949cbb;
-  --overlay1: #838ba7;
-  --overlay0: #737994;
+    --overlay2: #949cbb;
+    --overlay1: #838ba7;
+    --overlay0: #737994;
 
-  --surface2: #626880;
-  --surface1: #51576d;
-  --surface0: #414559;
+    --surface2: #626880;
+    --surface1: #51576d;
+    --surface0: #414559;
 
-  --base: #373a4b;
-  --mantle: #2c313c;
-  --crust: #282c34;
-  
+    --base: #373a4b;
+    --mantle: #2c313c;
+    --crust: #282c34;
 }
 
 QToolTip {
@@ -46,6 +45,8 @@ QToolTip {
     font-family: "JetBrainsMono NFP";
     margin: 0;
     padding: 0;
+    user-select: none;
+    outline: hidden;
 }
 
 .yasb-bar {
@@ -63,6 +64,230 @@ QToolTip {
 }
 .widget .label {
     padding: 0px 2px;
+}
+/* ======================================== Launchpad Widget ======================================== */
+
+/* Widget style */
+.launchpad-widget {
+    padding: 0 2px 0 16px;
+}
+.launchpad-widget .label {
+}
+.launchpad-widget .icon {
+    font-size: 16px;
+    color: var(--text);
+}
+
+/* Launchpad context menu style */
+.launchpad .context-menu {
+    background-color: var(--crust);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 0px;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.launchpad .context-menu::item {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 4px;
+    min-width: 100px;
+}
+.launchpad .context-menu::item:selected {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+.launchpad .context-menu::item:pressed {
+    background-color: #3a3a3a;
+}
+.launchpad .context-menu::separator {
+    height: 1px;
+    background-color: #404040;
+    margin: 4px 8px;
+}
+.launchpad .context-menu::item:disabled {
+    color: #666666;
+    background-color: transparent;
+}
+
+.launchpad .app-dialog {
+    font-family: "Segoe UI";
+    background-color: var(--crust);
+}
+.launchpad .app-dialog .buttons-container {
+    background-color: var(--mantle);
+    margin-top: 16px;
+    border-top: 1px solid #000;
+    max-height: 80px;
+    min-height: 80px;
+    padding: 0 20px 0 20px;
+}
+.launchpad .app-dialog .message {
+    color: #ffffff;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+.launchpad .app-dialog .title-field,
+.launchpad .app-dialog .path-field,
+.launchpad .app-dialog .icon-field {
+    background-color: var(--mantle);
+    border: 1px solid #303030;
+    border-radius: 4px;
+    padding: 0 6px;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 10px 0px 5px 0;
+    min-height: 30px;
+}
+.launchpad .app-dialog .title-field:focus,
+.launchpad .app-dialog .path-field:focus,
+.launchpad .app-dialog .icon-field:focus {
+    border-bottom-color: var(--lavender);
+}
+.launchpad .app-dialog .button {
+    background-color: var(--base);
+    border: none;
+    border-radius: 4px;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    min-width: 80px;
+    padding: 0 6px;
+    margin: 10px 0 5px 6px;
+    min-height: 28px;
+    outline: none;
+}
+.launchpad .app-dialog .buttons-container .button {
+    margin: 10px 0 5px 0px;
+    font-size: 13px;
+}
+.launchpad .app-dialog .button:focus {
+    border: 2px solid var(--lavender);
+}
+.launchpad .app-dialog .button:focus,
+.launchpad .app-dialog .button:hover {
+    background-color: var(--surface0);
+}
+.launchpad .app-dialog .button:pressed {
+    background-color: var(--surface0);
+}
+.launchpad .app-dialog .button.add,
+.launchpad .app-dialog .button.save {
+    background-color: var(--blue);
+}
+.launchpad .app-dialog .button.add:focus,
+.launchpad .app-dialog .button.save:focus,
+.launchpad .app-dialog .button.add:hover,
+.launchpad .app-dialog .button.save:hover {
+    background-color: var(--blue);
+}
+.launchpad .app-dialog .button.add:pressed,
+.launchpad .app-dialog .button.save:pressed {
+    background-color: var(--overlay0);
+}
+.launchpad .app-dialog .button.delete {
+    border: none;
+    background-color: var(--red);
+}
+.launchpad .app-dialog .button.delete:focus,
+.launchpad .app-dialog .button.delete:hover {
+    background-color: var(--red);
+}
+.launchpad .app-dialog .button.delete:pressed {
+    background-color: var(--mantle);
+}
+.launchpad .app-dialog .warning-message {
+    background-color: #2b0b0e;
+    border: 1px solid #5a303c;
+    border-radius: 4px;
+    color: #cc9b9f;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin: 4px 0px;
+}
+
+/* Launchpad popup style */
+.launchpad .drop-overlay {
+    background-color: rgba(24, 25, 27, 0.8);
+    border: 4px dashed #3c80ff;
+}
+.launchpad .drop-overlay .text {
+    color: #ffffff;
+    font-family: "Segoe UI";
+    font-size: 64px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.launchpad .launchpad-container {
+    background-color: var(--mantle);
+}
+.launchpad .search-container {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: var(--crust);
+    min-height: 80px;
+    margin: 0;
+    padding: 0;
+}
+.launchpad .search-input {
+    max-width: 400px;
+    padding: 8px 12px;
+    font-size: 14px;
+    min-height: 24px;
+    max-height: 24px;
+    font-family: "Segoe UI";
+    border-radius: 20px;
+    border: 2px solid var(--surface2);
+    background-color: var(--mantle);
+    color: #a6adc8;
+}
+.launchpad .search-input:focus {
+    border: 2px solid var(--lavender);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.launchpad .launchpad-scroll-area {
+    background-color: transparent;
+    border: none;
+}
+.launchpad .app-icon {
+    border-radius: 12px;
+    padding: 12px 5px;
+    margin: 24px 6px 6px 6px;
+    max-width: 100px;
+    min-width: 100px;
+}
+.launchpad .app-icon:focus {
+    border: 1px solid var(--lavender);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.launchpad .app-icon:hover {
+    border: 1px solid var(--lavender);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.launchpad .app-icon .title {
+    color: var(--text);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+/* App icon .launchpad .app-icon or URL icon .launchpad .app-icon.url */
+.launchpad .app-icon.url .title {
+    color: #52f1d2;
+}
+.launchpad .app-icon .icon {
+    padding: 0;
+    margin: 0;
 }
 
 /* ======================================== Home Widget ======================================== */
@@ -170,7 +395,7 @@ QToolTip {
 .calendar .date-label {
     font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
     font-size: 16px;
-    color: #ffffff;
+    color: var(--text);
     font-weight: 700;
     min-width: 180px;
     max-width: 180px;
@@ -183,7 +408,6 @@ QToolTip {
 .calendar .date-label {
     font-size: 88px;
     font-weight: 900;
-    color: #ffffff;
     margin-top: -20px;
 }
 
@@ -216,21 +440,17 @@ QToolTip {
     border-radius: 0;
 }
 .media-widget .label {
-    color: #bac2db;
+    color: var(--text);
     padding: 0px;
     padding-right: 4px;
     font-size: 12px;
 }
 .media-widget .btn {
-    color: #7a7f8b;
     padding: 0 4px;
     margin: 0;
     font-family: "JetBrainsMono NFP";
     font-weight: 400;
     font-size: 20px;
-}
-.media-widget .btn:hover {
-    color: #babfd3;
 }
 .media-widget .btn.play {
     font-size: 18px;
@@ -325,7 +545,6 @@ QToolTip {
     font-weight: 400;
 }
 
-/* Task item styles */
 .todo-menu .task-item {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -377,7 +596,6 @@ QToolTip {
     color: #7f8c8d;
 }
 
-/* Task info row styles */
 .todo-menu .task-info-row {
     margin-left: 8px;
     margin-bottom: 8px;
@@ -568,6 +786,145 @@ QToolTip {
     font-size: 15px;
     color: var(--rosewater);
     margin: 0px 3px 1px 0;
+}
+
+.wifi-menu {
+    font-family: "Segoe UI";
+    background-color: var(--mantle);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+    color: var(--text);
+    border: 1px solid var(--surface1);
+    border-radius: 8px;
+}
+
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--sky);
+}
+
+.wifi-menu .header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--mantle);
+    color: var(--text);
+    border-bottom: 1px solid var(--surface1);
+}
+
+.wifi-menu .error-message {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--red);
+    color: var(--crust);
+    border-bottom: 1px solid var(--surface1);
+}
+
+.wifi-menu .wifi-list {
+    background-color: var(--crust);
+    margin-right: 3px;
+    border-radius: 6px;
+}
+
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+    color: var(--subtext1);
+    transition: background-color 0.2s ease;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: var(--surface0);
+    border-radius: 6px;
+    color: var(--text);
+}
+
+.wifi-menu .wifi-item[active="true"] {
+    background-color: var(--surface0);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+    color: var(--text);
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: "JetBrainsMono NFP";
+    font-size: 26px;
+    margin-right: 10px;
+    color: var(--blue);
+}
+
+.wifi-menu .wifi-item .name {
+    font-size: 14px;
+    margin-right: 10px;
+    color: var(--text);
+}
+
+.wifi-menu .wifi-item .password {
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--overlay1);
+}
+
+.wifi-menu .wifi-item .status,
+.wifi-menu .wifi-item .strength {
+    font-size: 14px;
+    color: var(--subtext0);
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: var(--surface0);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    color: var(--text);
+    transition: background-color 0.2s ease;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: var(--surface1);
+}
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: var(--overlay0);
+}
+
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: var(--overlay1);
+    background-color: var(--mantle);
+    border-top: 1px solid var(--surface1);
+}
+
+.wifi-menu .footer .settings-button,
+.wifi-menu .footer .refresh-icon {
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--subtext1);
+    transition: background-color 0.2s ease;
+    font-family: "Segoe Fluent Icons";
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: var(--surface0);
+    border-radius: 4px;
+    color: var(--text);
 }
 
 /* ======================================== Battery Widget ======================================== */
